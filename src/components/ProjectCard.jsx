@@ -1,9 +1,9 @@
-function ProjectCard() {
+function ProjectCard({ name, description, progress }) {
   return (
     <article>
-      <h2>DevTrack</h2>
-      <p>Projeto de portfólio com React e testes.</p>
-      <span>Progresso: 20%</span>
+      <h2>{name}</h2>
+      <p>{description}</p>
+      <span>Progresso: {progress}%</span>
     </article>
   )
 }
