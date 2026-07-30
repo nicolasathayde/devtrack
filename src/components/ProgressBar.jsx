@@ -1,15 +1,14 @@
+import './ProgressBar.css'
+
 function ProgressBar({ progress }) {
   return (
-    <div>
+    <div className="progress-container">
       <p>Progresso: {progress}%</p>
 
-      <div>
+      <div className="progress-bar">
         <div
-          style={{
-            width: `${progress}%`,
-            height: '10px',
-            backgroundColor: '#4caf50',
-          }}
+          className="progress-fill"
+          style={{ width: `${progress}%` }}
         />
       </div>
     </div>
