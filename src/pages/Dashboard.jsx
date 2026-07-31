@@ -1,4 +1,5 @@
 import ProjectCard from '../components/ProjectCard'
+import projects from '../projects'
 
 function Dashboard() {
   return (
@@ -6,17 +7,14 @@ function Dashboard() {
       <h1>DevTrack Dashboard</h1>
       <p>Acompanhe seus projetos e evolução.</p>
 
-      <ProjectCard
-        name="DevTrack"
-        description="Projeto de portfólio com React e testes."
-        progress={20}
-      />
-
-      <ProjectCard
-        name="API Python"
-        description="Estudos de backend e integração."
-        progress={40}
-      />
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.name}
+          name={project.name}
+          description={project.description}
+          progress={project.progress}
+        />
+      ))}
     </main>
   )
 }
