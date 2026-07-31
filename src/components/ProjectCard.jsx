@@ -1,3 +1,4 @@
+import './ProjectCard.css'
 import ProgressBar from './ProgressBar'
 
 function ProjectCard({ name, description, progress }) {
