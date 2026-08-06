@@ -13,7 +13,12 @@ function ProjectCard({ name, description, progress, status }) {
       <div className="status-container">
       <span className="status-label">Status</span>
 
-      <span className={`status-badge ${status.toLowerCase().replace(' ', '-')}`}>
+      <span className={`status status-${status
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(' ', '-')
+      }`}>
         {status}
       </span>
       </div>

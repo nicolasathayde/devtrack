@@ -6,6 +6,24 @@ function Modal({ onClose, onAddProject }) {
   const [description, setDescription] = useState('')
   const [progress, setProgress] = useState(0)
   const [status, setStatus] = useState('Em andamento')
+  
+  function handleSubmit(event) {
+  event.preventDefault()
+  const newProject = {
+    name,
+    description,
+    progress: Number(progress),
+    status
+  }
+  onAddProject(newProject)
+  setName('')
+  setDescription('')
+  setProgress(0)
+  setStatus('Em andamento')
+  
+  onClose()
+}
+
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -20,7 +38,10 @@ function Modal({ onClose, onAddProject }) {
           </button>
         </div>
 
-        <form className="project-form">
+        <form
+          className="project-form"
+          onSubmit={handleSubmit}
+        >
         <label>
           Nome do projeto
           <input

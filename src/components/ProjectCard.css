@@ -31,38 +31,25 @@ article:hover {
 }
 
 .status {
-  font-size: 0.95rem;
-  color: #374151;
-}
-
-.status strong {
-  color: #2563eb;
-}
-
-.status-container {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-}
-
-.status-label {
-  font-weight: 600;
-  color: #374151;
-}
-
-.status-badge {
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
-.em-andamento {
-  background: #dbeafe;
+.status-em-andamento {
+  background-color: #b0ccf1;
   color: #2563eb;
 }
 
-.pausado {
-  background: #fef3c7;
-  color: #b45309;
+.status-pausado {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.status-concluido {
+  background-color: #afe9c3;
+  color: #16a34a;
 }
