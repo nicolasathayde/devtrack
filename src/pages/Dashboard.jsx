@@ -1,10 +1,29 @@
 import { useState } from 'react'
 import ProjectCard from '../components/ProjectCard'
-import projects from '../projects'
 import Modal from '../components/Modal'
 import './Dashboard.css'
 
 function Dashboard() {
+  const [projects, setProjects] = useState([
+  {
+    name: "DevTrack",
+    description: "Projeto de portfólio com React e testes.",
+    progress: 20,
+    status: "Em andamento"
+  },
+  {
+    name: "API Python",
+    description: "Estudos de backend e integração.",
+    progress: 40,
+    status: "Pausado"
+  }
+])
+function addProject(newProject) {
+  setProjects([
+    ...projects,
+    newProject
+  ])
+}
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <main>
@@ -36,7 +55,10 @@ function Dashboard() {
       ))}
     </section>
     {isModalOpen && (
-      <Modal onClose={() => setIsModalOpen(false)} />
+      <Modal
+        onClose={() => setIsModalOpen(false)}
+        onAddProject={addProject}
+      />
     )}
     </main>
   )
