@@ -1,13 +1,22 @@
 import './ProjectCard.css'
 import ProgressBar from './ProgressBar'
 
-function ProjectCard({ name, description, progress }) {
+function ProjectCard({ name, description, progress, status }) {
   return (
     <article>
       <h2>{name}</h2>
+
       <p>{description}</p>
 
       <ProgressBar progress={progress} />
+
+      <div className="status-container">
+      <span className="status-label">Status</span>
+
+      <span className={`status-badge ${status.toLowerCase().replace(' ', '-')}`}>
+        {status}
+      </span>
+      </div>
     </article>
   )
 }
