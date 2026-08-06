@@ -16,8 +16,10 @@ function ProjectCard({ name, description, progress, status }) {
 
       <p>{description}</p>
 
-      <ProgressBar progress={progress} />
-
+      <ProgressBar 
+        progress={progress}
+        status={status}
+      />
       <div className="status-container">
         <span className="status-label">
           Status
