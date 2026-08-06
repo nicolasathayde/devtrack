@@ -1,20 +1,28 @@
+import { useState } from 'react'
 import ProjectCard from '../components/ProjectCard'
 import projects from '../projects'
+import Modal from '../components/Modal'
 import './Dashboard.css'
 
 function Dashboard() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <main>
     <section className="dashboard-header">
-      <div>
-        <h1>DevTrack Dashboard</h1>
-        <p>Acompanhe seus projetos e evolução.</p>
-      </div>
+    <div className="dashboard-title">
+      <h1>DevTrack Dashboard</h1>
+      <p>Acompanhe seus projetos e evolução.</p>
+    </div>
 
-      <button className="new-project-btn">
+    <div className="dashboard-actions">
+      <button
+        className="new-project-btn"
+        onClick={() => setIsModalOpen(true)}
+      >
         + Novo Projeto
       </button>
-    </section>
+    </div>
+     </section>
 
     <section className="projects-grid">
       {projects.map((project) => (
@@ -27,6 +35,9 @@ function Dashboard() {
         />
       ))}
     </section>
+    {isModalOpen && (
+      <Modal onClose={() => setIsModalOpen(false)} />
+    )}
     </main>
   )
 }
