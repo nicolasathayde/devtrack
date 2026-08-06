@@ -1,13 +1,13 @@
-article {
+.project-card {
   background: white;
   border: 1px solid #e5e7eb;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
   display: flex;
   flex-direction: column;
   gap: 16px;
+  text-align: center;
 }
 
 article h2 {
@@ -39,6 +39,11 @@ article:hover {
   font-weight: 600;
 }
 
+.status-nao-iniciado {
+  background-color: #bababd;
+  color: #4b5563;
+}
+
 .status-em-andamento {
   background-color: #b0ccf1;
   color: #2563eb;
@@ -50,6 +55,14 @@ article:hover {
 }
 
 .status-concluido {
-  background-color: #afe9c3;
-  color: #16a34a;
+  background-color: #b2f5c9;
+  color: #15803d;
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
 }
