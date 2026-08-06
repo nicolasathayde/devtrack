@@ -20,3 +20,50 @@ main > p {
   flex-direction: column;
   gap: 24px;
 }
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.new-project-btn {
+  background-color: #2563eb;
+  color: #ffffff !important;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.new-project-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .new-project-btn {
+    width: 100%;
+  }
+}
